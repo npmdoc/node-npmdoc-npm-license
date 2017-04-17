@@ -1,0 +1,548 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/AceMetrix/npm-license#readme"
+
+    >npm-license (v0.3.3)</a>
+</h1>
+<h4>Check license info for a module</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.npm-license">module npm-license</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-license.init">
+            function <span class="apidocSignatureSpan">npm-license.</span>init
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-license.print">
+            function <span class="apidocSignatureSpan">npm-license.</span>print
+            <span class="apidocSignatureSpan">(sorted, format)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">npm-license.</span>args</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">npm-license.</span>stack</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.npm-license.args">module npm-license.args</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-license.args.defaults">
+            function <span class="apidocSignatureSpan">npm-license.args.</span>defaults
+            <span class="apidocSignatureSpan">(parsed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-license.args.has">
+            function <span class="apidocSignatureSpan">npm-license.args.</span>has
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-license.args.parse">
+            function <span class="apidocSignatureSpan">npm-license.args.</span>parse
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-license.args.raw">
+            function <span class="apidocSignatureSpan">npm-license.args.</span>raw
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-license.args.usage">
+            function <span class="apidocSignatureSpan">npm-license.args.</span>usage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">npm-license.args.</span>known</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">npm-license.args.</span>shorts</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.npm-license.init">module npm-license.init</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-license.init.init">
+            function <span class="apidocSignatureSpan">npm-license.</span>init
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.npm-license.print">module npm-license.print</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-license.print.print">
+            function <span class="apidocSignatureSpan">npm-license.</span>print
+            <span class="apidocSignatureSpan">(sorted, format)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.npm-license.stack">module npm-license.stack</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.npm-license.stack.Stack">
+            function <span class="apidocSignatureSpan">npm-license.stack.</span>Stack
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.npm-license" id="apidoc.module.npm-license">module npm-license</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm-license.init" id="apidoc.element.npm-license.init">
+        function <span class="apidocSignatureSpan">npm-license.</span>init
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (options, callback) {
+
+    var defaults = {
+        start: &#x27;.&#x27;,
+        unknown: false,
+        depth: &#x27;all&#x27;,
+        include: &#x27;dependencies&#x27;,
+        meta: null
+    };
+    var data = {};
+    var unversioned = {};
+
+    options = _.extend(defaults, options);
+
+    if (typeof options.meta === &#x27;string&#x27;){
+        var meta = require(process.cwd() + &#x27;/&#x27; + options.meta);
+        var mapToUse = data;
+        for (var moduleKey in meta){
+            if (moduleKey.indexOf(&#x27;@&#x27;) &#x3e; -1){
+                mapToUse = data;
+            } else {
+                mapToUse = unversioned;
+            }
+            if (typeof meta[moduleKey] === &#x27;string&#x27;){
+                mapToUse[moduleKey] = {licenses: meta[moduleKey]};
+            }
+            else if (typeof meta[moduleKey] === &#x27;object&#x27;)
+                mapToUse[moduleKey] = meta[moduleKey];
+        }
+    }
+
+    if (typeof options.include === &#x27;string&#x27;) {
+        if (options.include === &#x27;all&#x27;){
+            options.include = [&#x27;dependencies&#x27;,&#x27;devDependencies&#x27;,&#x27;bundledDependencies&#x27;,&#x27;bundleDependencies&#x27;,&#x27;optionalDependencies
+&#x27;,&#x27;peerDependencies&#x27;]
+        } else{
+            options.include = [options.include];
+        }
+    }
+
+    var opt = {
+        depth: options.depth,
+        dev: options.include.indexOf(&#x27;devDependencies&#x27;) != -1,
+    }
+
+    read(options.start, opt, function(err, json) {
+        flatten(data, unversioned, json, options);
+        var sorted = {};
+        Object.keys(data).sort().forEach(function(item) {
+            if (options.unknown &#x26;&#x26; data[item].licenses !== UNKNOWN &#x26;&#x26; data[item].licenses.indexOf(&#x27;*&#x27;) === -1)
+                delete data[item];
+            if (data[item]) sorted[item] = data[item];
+        });
+        callback(sorted);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Requiring
+---------
+
+
+```javascript
+var checker = require(&#x27;npm-license&#x27;);
+
+checker.<span class="apidocCodeKeywordSpan">init</span>({
+    start: &#x27;/path/to/start/looking&#x27;
+}, function(json) {
+    //The sorted json data
+});
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.npm-license.print" id="apidoc.element.npm-license.print">
+        function <span class="apidocSignatureSpan">npm-license.</span>print
+        <span class="apidocSignatureSpan">(sorted, format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">print = function (sorted, format) {
+    if (format === &#x22;json&#x22;){
+        console.log(JSON.stringify(sorted));
+    } else{
+        console.log(treeify.asTree(sorted, true));
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.npm-license.args" id="apidoc.module.npm-license.args">module npm-license.args</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm-license.args.defaults" id="apidoc.element.npm-license.args.defaults">
+        function <span class="apidocSignatureSpan">npm-license.args.</span>defaults
+        <span class="apidocSignatureSpan">(parsed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaults = function (parsed) {
+    if (parsed === undefined) {
+        parsed = clean();
+    }
+
+    return parsed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.npm-license.args.has" id="apidoc.element.npm-license.args.has">
+        function <span class="apidocSignatureSpan">npm-license.args.</span>has
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function (a) {
+    var cooked = raw().argv.cooked,
+        ret = false;
+
+    cooked.forEach(function (o) {
+        if ((o === &#x27;--&#x27; + a) || (o === &#x27;--no-&#x27; + a)) {
+            ret = true;
+        }
+    });
+
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.npm-license.args.parse" id="apidoc.element.npm-license.args.parse">
+        function <span class="apidocSignatureSpan">npm-license.args.</span>parse
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (args) {
+    var parsed = clean(args);
+    return setDefaults(parsed);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.npm-license.args.raw" id="apidoc.element.npm-license.args.raw">
+        function <span class="apidocSignatureSpan">npm-license.args.</span>raw
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">raw = function (args) {
+    var parsed = nopt(known, shorts, (args || process.argv));
+    return parsed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.npm-license.args.usage" id="apidoc.element.npm-license.args.usage">
+        function <span class="apidocSignatureSpan">npm-license.args.</span>usage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">usage = function () {
+    return noptUsage(known, shorts, description, defaults);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.npm-license.init" id="apidoc.module.npm-license.init">module npm-license.init</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm-license.init.init" id="apidoc.element.npm-license.init.init">
+        function <span class="apidocSignatureSpan">npm-license.</span>init
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (options, callback) {
+
+    var defaults = {
+        start: &#x27;.&#x27;,
+        unknown: false,
+        depth: &#x27;all&#x27;,
+        include: &#x27;dependencies&#x27;,
+        meta: null
+    };
+    var data = {};
+    var unversioned = {};
+
+    options = _.extend(defaults, options);
+
+    if (typeof options.meta === &#x27;string&#x27;){
+        var meta = require(process.cwd() + &#x27;/&#x27; + options.meta);
+        var mapToUse = data;
+        for (var moduleKey in meta){
+            if (moduleKey.indexOf(&#x27;@&#x27;) &#x3e; -1){
+                mapToUse = data;
+            } else {
+                mapToUse = unversioned;
+            }
+            if (typeof meta[moduleKey] === &#x27;string&#x27;){
+                mapToUse[moduleKey] = {licenses: meta[moduleKey]};
+            }
+            else if (typeof meta[moduleKey] === &#x27;object&#x27;)
+                mapToUse[moduleKey] = meta[moduleKey];
+        }
+    }
+
+    if (typeof options.include === &#x27;string&#x27;) {
+        if (options.include === &#x27;all&#x27;){
+            options.include = [&#x27;dependencies&#x27;,&#x27;devDependencies&#x27;,&#x27;bundledDependencies&#x27;,&#x27;bundleDependencies&#x27;,&#x27;optionalDependencies
+&#x27;,&#x27;peerDependencies&#x27;]
+        } else{
+            options.include = [options.include];
+        }
+    }
+
+    var opt = {
+        depth: options.depth,
+        dev: options.include.indexOf(&#x27;devDependencies&#x27;) != -1,
+    }
+
+    read(options.start, opt, function(err, json) {
+        flatten(data, unversioned, json, options);
+        var sorted = {};
+        Object.keys(data).sort().forEach(function(item) {
+            if (options.unknown &#x26;&#x26; data[item].licenses !== UNKNOWN &#x26;&#x26; data[item].licenses.indexOf(&#x27;*&#x27;) === -1)
+                delete data[item];
+            if (data[item]) sorted[item] = data[item];
+        });
+        callback(sorted);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Requiring
+---------
+
+
+```javascript
+var checker = require(&#x27;npm-license&#x27;);
+
+checker.<span class="apidocCodeKeywordSpan">init</span>({
+    start: &#x27;/path/to/start/looking&#x27;
+}, function(json) {
+    //The sorted json data
+});
+
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.npm-license.print" id="apidoc.module.npm-license.print">module npm-license.print</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm-license.print.print" id="apidoc.element.npm-license.print.print">
+        function <span class="apidocSignatureSpan">npm-license.</span>print
+        <span class="apidocSignatureSpan">(sorted, format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">print = function (sorted, format) {
+    if (format === &#x22;json&#x22;){
+        console.log(JSON.stringify(sorted));
+    } else{
+        console.log(treeify.asTree(sorted, true));
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.npm-license.stack" id="apidoc.module.npm-license.stack">module npm-license.stack</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.npm-license.stack.Stack" id="apidoc.element.npm-license.stack.Stack">
+        function <span class="apidocSignatureSpan">npm-license.stack.</span>Stack
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Stack = function () {
+    this.errors   = [];
+    this.finished = 0;
+    this.results  = [];
+    this.total    = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
