@@ -154,32 +154,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.npm-license.init">module npm-license.init</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.npm-license.init.init">
-            function <span class="apidocSignatureSpan">npm-license.</span>init
-            <span class="apidocSignatureSpan">(options, callback)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.npm-license.print">module npm-license.print</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.npm-license.print.print">
-            function <span class="apidocSignatureSpan">npm-license.</span>print
-            <span class="apidocSignatureSpan">(sorted, format)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
     <li class="apidocModuleLi"><a href="#apidoc.module.npm-license.stack">module npm-license.stack</a><ol>
 
         <li>
@@ -296,7 +270,18 @@ checker.<span class="apidocCodeKeywordSpan">init</span>({
         console.log(treeify.asTree(sorted, true));
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        console.log(module.exports.name+&#x22;@&#x22;+module.exports.version);
+    }else if (args.json) {
+        var dir = path.dirname(args.json);
+        mkdirp.sync(dir);
+        fs.writeFileSync(args.json, JSON.stringify(json, null, 4) + &#x27;\n&#x27;, &#x27;utf8&#x27;);
+        console.log(&#x27;file written&#x27;, args.json);
+    } else {
+        checker.<span class="apidocCodeKeywordSpan">print</span>(json, args.export);
+    }
+});
+...</pre></li>
     </ul>
 
 
@@ -364,7 +349,23 @@ checker.<span class="apidocCodeKeywordSpan">init</span>({
     var parsed = clean(args);
     return setDefaults(parsed);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Copyright (c) 2013, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://yuilibrary.com/license/
+*/
+
+var checker = require(&#x27;../lib/index&#x27;);
+
+var args = require(&#x27;../lib/args&#x27;).<span class="apidocCodeKeywordSpan">parse</span>();
+var usage = require(&#x27;../lib/args&#x27;).usage();
+var pkginfo = require(&#x27;pkginfo&#x27;)(module);
+var mkdirp = require(&#x27;mkdirp&#x27;);
+var path = require(&#x27;path&#x27;);
+var fs = require(&#x27;fs&#x27;);
+
+checker.init(args, function(json) {
+...</pre></li>
     </ul>
 
 
@@ -395,124 +396,28 @@ checker.<span class="apidocCodeKeywordSpan">init</span>({
     <li>description and source-code<pre class="apidocCodePre">usage = function () {
     return noptUsage(known, shorts, description, defaults);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.npm-license.init" id="apidoc.module.npm-license.init">module npm-license.init</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.npm-license.init.init" id="apidoc.element.npm-license.init.init">
-        function <span class="apidocSignatureSpan">npm-license.</span>init
-        <span class="apidocSignatureSpan">(options, callback)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">init = function (options, callback) {
-
-    var defaults = {
-        start: &#x27;.&#x27;,
-        unknown: false,
-        depth: &#x27;all&#x27;,
-        include: &#x27;dependencies&#x27;,
-        meta: null
-    };
-    var data = {};
-    var unversioned = {};
-
-    options = _.extend(defaults, options);
-
-    if (typeof options.meta === &#x27;string&#x27;){
-        var meta = require(process.cwd() + &#x27;/&#x27; + options.meta);
-        var mapToUse = data;
-        for (var moduleKey in meta){
-            if (moduleKey.indexOf(&#x27;@&#x27;) &#x3e; -1){
-                mapToUse = data;
-            } else {
-                mapToUse = unversioned;
-            }
-            if (typeof meta[moduleKey] === &#x27;string&#x27;){
-                mapToUse[moduleKey] = {licenses: meta[moduleKey]};
-            }
-            else if (typeof meta[moduleKey] === &#x27;object&#x27;)
-                mapToUse[moduleKey] = meta[moduleKey];
-        }
-    }
-
-    if (typeof options.include === &#x27;string&#x27;) {
-        if (options.include === &#x27;all&#x27;){
-            options.include = [&#x27;dependencies&#x27;,&#x27;devDependencies&#x27;,&#x27;bundledDependencies&#x27;,&#x27;bundleDependencies&#x27;,&#x27;optionalDependencies
-&#x27;,&#x27;peerDependencies&#x27;]
-        } else{
-            options.include = [options.include];
-        }
-    }
-
-    var opt = {
-        depth: options.depth,
-        dev: options.include.indexOf(&#x27;devDependencies&#x27;) != -1,
-    }
-
-    read(options.start, opt, function(err, json) {
-        flatten(data, unversioned, json, options);
-        var sorted = {};
-        Object.keys(data).sort().forEach(function(item) {
-            if (options.unknown &#x26;&#x26; data[item].licenses !== UNKNOWN &#x26;&#x26; data[item].licenses.indexOf(&#x27;*&#x27;) === -1)
-                delete data[item];
-            if (data[item]) sorted[item] = data[item];
-        });
-        callback(sorted);
-    });
-}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-Requiring
----------
+Code licensed under the BSD License:
+http://yuilibrary.com/license/
+*/
 
+var checker = require(&#x27;../lib/index&#x27;);
 
-```javascript
-var checker = require(&#x27;npm-license&#x27;);
+var args = require(&#x27;../lib/args&#x27;).parse();
+var usage = require(&#x27;../lib/args&#x27;).<span class="apidocCodeKeywordSpan">usage</span>();
+var pkginfo = require(&#x27;pkginfo&#x27;)(module);
+var mkdirp = require(&#x27;mkdirp&#x27;);
+var path = require(&#x27;path&#x27;);
+var fs = require(&#x27;fs&#x27;);
 
-checker.<span class="apidocCodeKeywordSpan">init</span>({
-    start: &#x27;/path/to/start/looking&#x27;
-}, function(json) {
-    //The sorted json data
-});
-
-```
+checker.init(args, function(json) {
+if (args.help){
 ...</pre></li>
     </ul>
 
 
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.npm-license.print" id="apidoc.module.npm-license.print">module npm-license.print</a></h1>
 
 
-    <h2>
-        <a href="#apidoc.element.npm-license.print.print" id="apidoc.element.npm-license.print.print">
-        function <span class="apidocSignatureSpan">npm-license.</span>print
-        <span class="apidocSignatureSpan">(sorted, format)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">print = function (sorted, format) {
-    if (format === &#x22;json&#x22;){
-        console.log(JSON.stringify(sorted));
-    } else{
-        console.log(treeify.asTree(sorted, true));
-    }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
 
 
 </div>
