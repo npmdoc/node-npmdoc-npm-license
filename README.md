@@ -1,4 +1,7 @@
-# api documentation for  [npm-license (v0.3.3)](https://github.com/AceMetrix/npm-license#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-npm-license.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-npm-license) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-npm-license.svg)](https://travis-ci.org/npmdoc/node-npmdoc-npm-license)
+# npmdoc-npm-license
+
+#### basic api documentation for  [npm-license (v0.3.3)](https://github.com/AceMetrix/npm-license#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-npm-license.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-npm-license) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-npm-license.svg)](https://travis-ci.org/npmdoc/node-npmdoc-npm-license)
+
 #### Check license info for a module
 
 [![NPM](https://nodei.co/npm/npm-license.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/npm-license)
